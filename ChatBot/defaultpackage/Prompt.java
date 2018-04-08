@@ -9,11 +9,6 @@ import java.util.Scanner;
  */
 public class Prompt
 {
-    /**
-     *    Prompts the user for a string of characters and returns the string.
-     *    @param ask    the prompt
-     *    @return        the input string from user
-     */
     public static String getString (String ask)
     {
         Scanner scanner = new Scanner(System.in);
@@ -21,33 +16,7 @@ public class Prompt
         String input = scanner.nextLine();
         return input;
     }
-    
-    /**
-     *    Prompts the user for a character and returns the character.
-     *     @param ask    the prompt
-     *     @return     the character input from user
-     */
-    public static char getChar (String ask)
-    {
-        boolean badInput = false;
-        String input = new String("");
-        char character = 'a';
-        do{
-            badInput = false;
-            input = getString(ask);
-            if(input.length() > 1)
-                badInput = true;
-            else
-                character = input.charAt(0);
-        } while(badInput);
-        return character;
-    }
-    
-    /**
-     *    Prompts the user for an integer and returns the integer.
-     *     @param ask    the prompt line
-     *     @return        the integer input from user
-     */
+
     public static int getInt (String ask)
     {
         boolean badInput = false;
@@ -69,15 +38,7 @@ public class Prompt
         
         return value;
     }
-    
-    /**
-     *    Prompts the user for an integer using a range of min to max,
-     *    and returns the integer.
-     *     @param ask    the prompt line
-     *     @param min    the minimum integer accepted
-     *     @param max    the maximum integer accepted
-     *     @return        the integer input from user
-     */
+
     public static int getInt (String ask, int min, int max)
     {
         int value = 0;
@@ -88,11 +49,6 @@ public class Prompt
         return value;
     }
     
-    /**
-     *    Prompts user for a double and returns the double
-     *     @param ask    the prompt line
-     *     @return        the double input from user
-     */
     public static double getDouble (String ask)
     {
         boolean badInput = false;
@@ -114,15 +70,7 @@ public class Prompt
     
         return value;
     }
-    
-    /**
-     *    Prompts the user for an double using a range of min to max,
-     *     and returns the double.
-     *     @param ask    the prompt line
-     *     @param min    the minimum double accepted
-     *     @param max    the maximum double accepted
-     *     @return        the double input from user
-     */
+
     public static double getDouble (String ask, double min, double max)
     {
         double value = 0.0;

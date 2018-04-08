@@ -9,17 +9,9 @@ import java.io.PrintWriter;
 /**
  *  OpenFile.java
  *  Opens files for reading and writing
- * 
- *  @author Andrew Tedijanto
- *  @version 8/25/16
  */
 public class OpenFile
 {
-    /**
-     * Opens a file to read using the Scanner class.
-     * @param fileName  name of the file to open
-     * @return          the Scanner object to the file
-     */
      public static Scanner openToRead(String fileName)
      {
          Scanner input = null;
@@ -36,11 +28,6 @@ public class OpenFile
          return input;
      }
      
-     /**
-      * Opens a file to write using the PrintWriter class
-      * @param fileName name of the file to open
-      * @return         the PrintWriter object of the file
-      */
     public static PrintWriter openToWrite(String fileName)
     {
         PrintWriter output = null;

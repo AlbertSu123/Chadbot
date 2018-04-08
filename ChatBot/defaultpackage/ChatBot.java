@@ -279,8 +279,8 @@ public class ChatBot
         run.prompt();
         String input = "";
         do {
-            input = Prompt.getString("What service do you want to use? Player Info(NBA Player Stats), better "
-                + "player(who should win the NBA MVP award) or magic 8 ball? Type \'q\' to exit program");
+            input = Prompt.getString("\nWhat service do you want to use? Player Info(NBA Player Stats), better "
+                + "player(who should win the NBA MVP award), funny memes or magic 8 ball? Type \'q\' to exit program");
             input = input.toLowerCase();
             if((input.contains("magic")) || ((input.contains("ball")) && (input.contains("eight"))) || (input.contains("8")))
                 run.magic8Ball("yesornostarters.txt");
@@ -350,8 +350,8 @@ public class ChatBot
             question = Prompt
                 .getString( "Ask a question for the magic 8 ball, press \'q\' to quit." );
             int num = question.length();
-            if ( num > 9 )
-                num = 9;
+            if ( num > 6 )
+                num = 6;
             String starter = question.trim().substring( 0, num );
             Scanner scanner = OpenFile.openToRead( fileName );
             while ( scanner.hasNext() )
@@ -378,19 +378,10 @@ public class ChatBot
         int v =0;
         
         System.out.println( "Using the powers of our Supreme OverLord Chad Junior, we will predict"
-            + " who will be the better player next year(Using math)!" );
+            + " who will be the better player next year(Using math)!" );      
         
-        
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Who is the first player?");
-        String playerOne = scan.next();
-        
-        Scanner secondPlayer = new Scanner(System.in);
-        System.out.println("Who is the second player?");
-        String playerTwo = secondPlayer.next();
-        
-        scan.close();
-        secondPlayer.close();
+        String playerOne = Prompt.getString("Who is the first player?");
+        String playerTwo = Prompt.getString("Who is the second player?");
         
         while(i <arr.size())//iterates through the array of where playernames are items
         {
@@ -452,7 +443,7 @@ public class ChatBot
                 {
                     seen = true;
                     System.out.print(
-                        "Which statistic do you want to see? (ie points, rebounds assists etc.) " );
+                        "Which basketball statistic do you want to see? " );
                     Scanner scan = new Scanner( System.in );
                     String scannerResult = scan.next();
                     if ( scannerResult.equalsIgnoreCase( "p" )
